@@ -35,20 +35,51 @@ public class Professor
     public string FirstName
     {
         get { return _firstName; }
-        set { _firstName = value; }
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentException("First name cannot be blank.");
+            }
+            else
+            {
+                _firstName = value;
+            }
+        }
     }
 
     public string LastName
     {
         get { return _lastName; }
-        set { _lastName = value; }
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentException("Last name cannot be blank.");
+            }
+            else
+            {
+                _lastName = value;
+            }
+        }
     }
 
     public string Department
     {
         get { return _department; }
-        set { _department = value; }
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentException("Department name cannot be blank.");
+            }
+            else
+            {
+                _department = value;
+            }
+        }
     }
+
 
     // Constructors
     public Professor()
